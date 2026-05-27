@@ -1,0 +1,16 @@
+raw_*.html
+rsc_joined.txt
+__pycache__/
+*.pyc
+.venv/
+.DS_Store
+
+# Personal/source data — the rendered HTML (which is checked in) embeds
+# the published subset, so we don't need to commit the raw lists.
+phase2_guests/raw/*
+!phase2_guests/raw/.gitkeep
+phase2_guests/scored/*
+!phase2_guests/scored/.gitkeep
+
+# Local-only debugging helpers
+phase2_guests/debug_alts.py

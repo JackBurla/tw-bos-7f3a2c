@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Burla x a16z Tech Week Boston</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="page">
+      <header class="page-head">
+        <div>
+          <p class="eyebrow">Burla.dev x a16z Tech Week Boston - May 26-31, 2026</p>
+          <h1>Rooms most likely to contain people who actually work with big datasets</h1>
+          <p class="lede">Scored 0-100 on one question: "Will builders who run multi-TB Python pipelines be here?" Bio, healthcare, scientific compute, real data-infra hosts (Modal, CoreWeave, Baseten, Snowflake, Elastic, Datadog) rank highest. Generic AI-agent / LLM-app rooms are penalised.</p>
+        </div>
+        <div class="decision-counts" id="decisionCounts"></div>
+      </header>
+
+      <section class="filters">
+        <div class="filter-group">
+          <label for="tier">Tier</label>
+          <select id="tier">
+            <option value="actionable">Score 30+ (default)</option>
+            <option value="all">Everything (334)</option>
+            <option value="Top Burla Target">Top Burla Target</option>
+            <option value="Strong Fit">Strong Fit</option>
+            <option value="Worth Trying">Worth Trying</option>
+            <option value="Soft / Adjacent">Soft / Adjacent</option>
+            <option value="Off-Topic">Off-Topic</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label for="day">Day</label>
+          <select id="day">
+            <option value="">All days</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label for="neighborhood">Neighborhood</label>
+          <select id="neighborhood">
+            <option value="">All neighborhoods</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label for="decision">Decision</label>
+          <select id="decision">
+            <option value="">All decisions</option>
+            <option value="Interested">Only Interested</option>
+            <option value="Maybe">Only Maybe</option>
+            <option value="Not">Only Not</option>
+            <option value="Unmarked">Only Unmarked</option>
+          </select>
+        </div>
+        <div class="filter-group grow">
+          <label for="search">Search</label>
+          <input id="search" type="search" placeholder="Search title or host...">
+        </div>
+        <div class="filter-group">
+          <label class="checkbox">
+            <input id="partifulOnly" type="checkbox">
+            Partiful link only
+          </label>
+        </div>
+      </section>
+
+      <p class="result-count" id="resultCount"></p>
+
+      <div class="people-list" id="peopleList" aria-live="polite"></div>
+    </main>
+
+    <script type="application/json" id="events-data">__EVENTS_JSON__</script>
+    <script src="app.js"></script>
+  </body>
+</html>

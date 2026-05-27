@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>__EVENT_NAME__ - Scored guests</title>
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body>
+    <main class="page">
+      <header class="page-head">
+        <div>
+          <p class="eyebrow"><a href="../index.html" class="back-link">&larr; All events</a> &nbsp;|&nbsp; Boston Tech Week, __EVENT_DATE__ &nbsp;|&nbsp; Hosted by __EVENT_HOST__</p>
+          <h1>__EVENT_NAME__</h1>
+          <p class="lede">Scored guests, ranked by likelihood that they personally work with big datasets. __PARSED_COUNT__ of __DECLARED_COUNT__ on the Partiful list captured. <a href="__EVENT_PARTIFUL__" target="_blank" rel="noreferrer">Partiful event &rarr;</a></p>
+        </div>
+        <div class="decision-counts" id="decisionCounts"></div>
+      </header>
+
+      <section class="filters">
+        <div class="filter-group">
+          <label for="tier">Tier</label>
+          <select id="tier">
+            <option value="actionable">Score 55+ (default)</option>
+            <option value="all">Everyone</option>
+            <option value="top">90+ (top targets)</option>
+            <option value="strong">75-89 (strong fit)</option>
+            <option value="aware">55-74 (data-aware)</option>
+            <option value="other">Below 55</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label for="decision">Decision</label>
+          <select id="decision">
+            <option value="">All decisions</option>
+            <option value="Interested">Only Interested</option>
+            <option value="Maybe">Only Maybe</option>
+            <option value="Not">Only Not</option>
+            <option value="Unmarked">Only Unmarked</option>
+          </select>
+        </div>
+        <div class="filter-group grow">
+          <label for="search">Search</label>
+          <input id="search" type="search" placeholder="Search name, company, role, tags...">
+        </div>
+        <div class="filter-group">
+          <label class="checkbox">
+            <input id="hideUnverified" type="checkbox">
+            Hide unverified
+          </label>
+        </div>
+      </section>
+
+      <p class="result-count" id="resultCount"></p>
+
+      <div class="people-list" id="peopleList" aria-live="polite"></div>
+    </main>
+
+    <script type="application/json" id="guests-data">__GUESTS_JSON__</script>
+    <script src="guests_app.js"></script>
+  </body>
+</html>
