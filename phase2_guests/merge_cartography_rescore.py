@@ -31,6 +31,11 @@ def main() -> None:
     for path in files:
         guests.extend(json.loads(path.read_text(encoding="utf-8")).get("guests", []))
 
+    leftover_path = SCORED / "cartography_leftover.json"
+    if leftover_path.exists():
+        leftover = json.loads(leftover_path.read_text(encoding="utf-8")).get("guests", [])
+        guests.extend(leftover)
+
     seen: set[str] = set()
     deduped: list[dict] = []
     for g in guests:
